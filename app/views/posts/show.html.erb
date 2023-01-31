@@ -10,7 +10,7 @@
 		<hr>
 	</div>
 <% end %>
-<%= form_for [@post,@comment] do |f| %>
+<%= form_for [@post, @comment] do |f| %>
 	<%= f.text_field :content %>
 	<br>
 	<%= f.submit 'コメントする' %>
