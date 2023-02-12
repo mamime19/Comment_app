@@ -1,18 +1,17 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :create]
   def index
-    @posts=current_user.posts.all
-    @post=current_user.posts.new
+    @posts=Post.all
+    @post=Post.new
   end
 
   def show
     @post=Post.find(params[:id])
     @comments=@post.comments
-    @comment=current_user.comments.new
+    @comment=Comment.new
   end
   def create
-    @post=current_user.posts.new(post_params)
-    @post.user_id=current_user.id
+    @post=Post.new(post_params)
     if @post.save
       redirect_back(fallback_location: root_path)
     else
