@@ -2,7 +2,7 @@
 <h3><%= @post.user.name %></h3>
 <%= @post.created_at.to_s(:datetime_jp) %>
 <h3><%= @post.content %></h3>
-<h3><%= @comments.size %></h3>
+<h3><%= @comment %></h3>
 <% @comments.each do |c| %>
 	<div>
 		<a href="/user/<%= @post.user.id %>"><%= c.user.name %></a>
@@ -10,7 +10,7 @@
 		<hr>
 	</div>
 <% end %>
-<%= form_for @comments do |f| %>
+<%= form_with model: [@post, @comment] do |f| %>
 	<%= f.text_field :content %>
 	<br>
 	<%= f.submit 'コメントする' %>
