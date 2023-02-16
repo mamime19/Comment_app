@@ -1,20 +1,19 @@
-<h1>まみめの掲示板</h1>
+<h1>Gentian</h1>
+<h3>新感覚のSNS</h3>
 <% if user_signed_in? %>
 	<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 	<%= link_to "マイページへ", user_path(current_user) %>
-	<h2>投稿する</h2>
 	<%= form_for @post do |f| %>
 		<%= f.text_area :content, class: 'form-control',size: "40x5"%>
-		<%= f.submit %>
+		<%= f.submit '投稿する',:class=>"kadomaru" %>
 	<% end %>
-	<p class="button">aa</p>
 <% end %>
 <hr>
 <h2>投稿一覧</h2>
 <% @posts.each do |post| %>
 	ユーザー名：<a href="/users/<%= post.user.id %>"><%= post.user.name %></a>
 	<p><%= post.content %></p>
-	<p><a href="/posts/<%= post.id %>">＞返信する</a></p>
+	<p><a href="/posts/<%= post.id %>">＞コメントする</a></p>
 <% end %>
 <% if not user_signed_in? %>
 	<%= link_to "ユーザー登録", new_user_registration_path %>
