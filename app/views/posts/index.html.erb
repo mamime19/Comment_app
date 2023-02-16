@@ -1,5 +1,4 @@
 <h1>Gentian</h1>
-<h3>新感覚のSNS</h3>
 <% if user_signed_in? %>
 	<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 	<%= link_to "マイページへ", user_path(current_user) %>
