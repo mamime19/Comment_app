@@ -7,8 +7,8 @@ class PostsController < ApplicationController
 
   def show
     @post=Post.find(params[:id])
-    @comments=@post.comments
-    @comment=Comment.new
+    @comments=@comments = @post.comments.includes(:user).all
+    @comment=@post.comments.build
   end
   def create
     @post=Post.new(post_params)

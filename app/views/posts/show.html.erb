@@ -2,10 +2,9 @@
 <h3><%= @post.user.name %></h3>
 <%= @post.created_at.to_s(:datetime_jp) %>
 <h3><%= @post.content %></h3>
-<h3><%= @comment %></h3>
 <% @comments.each do |c| %>
 	<div>
-		<a href="/user/<%= @post.user.id %>"><%= c.user.name %></a>
+		<a href="/users/<%= @post.user.id %>"><%= c.user.name %></a>
 		<%= c.content %>
 		<hr>
 	</div>
