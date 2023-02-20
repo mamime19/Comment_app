@@ -16,6 +16,27 @@
 	transform: translateY(3px);
 }
 
+.fusen-001 {
+	display: inline-block;
+	position: relative;
+	padding: .5em 1.3em .5em 1em;
+	background-color: #a9ceec;
+	color: #333333;
+}
+
+.fusen-001::before {
+	position: absolute;
+	bottom: -1px;
+	right: 9px;
+	z-index: -1;
+	transform: rotate(5deg);
+	width: 70%;
+	height: 50%;
+	background-color: #d0d0d0;
+	content: "";
+	filter: blur(4px);
+}
+
 
 textarea {
 	font-family: "MS ゴシック";
