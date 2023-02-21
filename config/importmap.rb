@@ -1,0 +1,1 @@
+pin_all_from 'app/javascript/posts', under: 'posts'

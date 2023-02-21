@@ -19,8 +19,8 @@
 .fusen-001 {
 	display: inline-block;
 	position: relative;
-	padding: .5em 1.3em .5em 1em;
-	background-color: #a9ceec;
+	padding: 0.5em 1.3em .5em 1em;
+	background-color: var(--color);
 	color: #333333;
 }
 
@@ -37,6 +37,12 @@
 	filter: blur(4px);
 }
 
+.flexitem{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 45px 5%;
+	justify-content: space-between;
+}
 
 textarea {
 	font-family: "MS ゴシック";

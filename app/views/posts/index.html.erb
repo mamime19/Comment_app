@@ -1,4 +1,5 @@
-<h1>Camelia</h1>
+<h1>Post-Idea!</h1>
+<p>Post-Idea!はアイデアを収集・整理するWebサービスです</p>
 <% if user_signed_in? %>
 	<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
 	<%= link_to "マイページへ", user_path(current_user) %>
@@ -8,15 +9,22 @@
 	<% end %>
 <% end %>
 <hr>
-<h2>投稿一覧</h2>
+<h2>アイデア一覧</h2>
+<div class="flexitem">
 <% @posts.each do |post| %>
 	<div class="fusen-001">
+		<script>
+			SetColor(post.id);
+			document.write("aab");
+		</script>
 		<p><%= post.content %></p>
 		<a href="/users/<%= post.user.id %>"><%= post.user.name %></a>
+		<p><a href="/posts/<%= post.id %>">＞コメントする</a></p>
 	</div>
-	<p><a href="/posts/<%= post.id %>">＞コメントする</a></p>
 <% end %>
+</div>
 <% if not user_signed_in? %>
 	<%= link_to "ユーザー登録", new_user_registration_path %>
 	<%= link_to "ログイン", new_user_session_path %>
 <% end %>
+ <%= javascript_include_tag "posts/index.js" %>
