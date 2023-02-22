@@ -1,1 +1,3 @@
-pin_all_from 'app/javascript/posts', under: 'posts'
+# Pin npm packages by running ./bin/importmap
+
+pin "application", preload: true

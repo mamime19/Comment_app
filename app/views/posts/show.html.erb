@@ -1,18 +1,21 @@
-<h1>投稿詳細ページ</h1>
-<h3><%= @post.user.name %></h3>
-<%= @post.created_at.to_s(:datetime_jp) %>
-<h3><%= @post.content %></h3>
+<h1>投稿詳細</h1>
+<div class="fusen-001">
+<p><strong><%= @post.user.name %></strong>  <%= @post.created_at.to_s(:datetime_jp) %></p>
+<p class="font1"><%= @post.content %></p>
+</div>
+<%= form_with model: [@post, @comment] do |f| %>
+	<div class="marginconnect"><%= f.text_field :content, :class=>"commenttext" %></div>
+	<div class="marginconnect"><%= f.submit 'コメントする',:class=>"kadomaru2"%></div>
+<% end %>
+<hr>
+<h3>コメント一覧</h3>
+<div class="flexitem2">
 <% @comments.each do |c| %>
-	<div>
-		<a href="/users/<%= @post.user.id %>"><%= c.user.name %></a>
+	<div class="fusen-002">
+		<strong><%= c.user.name %></strong>
 		<%= c.content %>
-		<hr>
 	</div>
 <% end %>
-<%= form_with model: [@post, @comment] do |f| %>
-	<%= f.text_field :content %>
-	<br>
-	<%= f.submit 'コメントする' %>
-<% end %>
-
+</div>
+<br><br>
 <%= link_to "ホームへ戻る", posts_path %>
