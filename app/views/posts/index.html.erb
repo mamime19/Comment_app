@@ -1,9 +1,11 @@
 <h1>Post-Idea!</h1>
 <p>Post-Idea!はアイデアを収集・整理するWebサービスです</p>
 <p>みんなでアイデアを出して付箋を増やそう！！</p>
+<% if not user_signed_in? %>
+	<%= link_to "ログイン", new_user_session_path %>
+<% end %>
 <% if user_signed_in? %>
 	<%= link_to "ログアウト", destroy_user_session_path, :method => :delete %>
-	<%= link_to "マイページへ", user_path(current_user) %>
 	<br><br>
 	<%= form_for @post do |f| %>
 		<%= f.text_area :content, class: 'form-control',size: "40x5", placeholder: "アイデアを投稿してみよう！"%>
@@ -21,7 +23,3 @@
 	</div>
 <% end %>
 </div>
-<% if not user_signed_in? %>
-	<%= link_to "ユーザー登録", new_user_registration_path %>
-	<%= link_to "ログイン", new_user_session_path %>
-<% end %>

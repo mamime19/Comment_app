@@ -4,7 +4,7 @@
 <p class="font1"><%= @post.content %></p>
 </div>
 <%= form_with model: [@post, @comment] do |f| %>
-	<div class="marginconnect"><%= f.text_field :content, :class=>"commenttext" %></div>
+	<div class="marginconnect"><%= f.text_field :content, :class=>"commenttext" ,placeholder:"コメントしよう！"%></div>
 	<div class="marginconnect"><%= f.submit 'コメントする',:class=>"kadomaru2"%></div>
 <% end %>
 <hr>
