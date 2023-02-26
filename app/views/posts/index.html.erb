@@ -1,6 +1,52 @@
-<h1>Post-Idea!</h1>
-<p>Post-Idea!はアイデアを収集・整理するWebサービスです</p>
-<p>みんなでアイデアを出して付箋を増やそう！！</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Post-Idea!</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">Post-Idea!はユーザーのアイデアを収集・管理するサービスです</p>
+  <p class="lead">
+    <a class="btn btn-primary" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+<div class="alert alert-primary" role="alert">
+  killing frog!!
+</div>
+
 <% if not user_signed_in? %>
 	<%= link_to "ログイン", new_user_session_path %>
 <% end %>
@@ -22,8 +68,4 @@
 		<div class="button03"><a href="/posts/<%= post.id %>">コメントする</a></div>
 	</div>
 <% end %>
-</div>
-
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
 </div>
