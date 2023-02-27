@@ -41,33 +41,12 @@
   </div>
 </nav>
 
-<h1>投稿詳細</h1>
-<div class="col-sm-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= @post.user.name %></h5>
-		<p class="card-text"><%= @post.created_at.to_s(:datetime_jp) %></p>
-        <p class="card-text"><%= @post.content %></p>
-      </div>
-    </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+	<br>
+    <h1 class="display-4">Post idea!へようこそ</h1>
+    <p class="lead">Post idea!ではユーザが自由にアイデアを投稿して世界に発信することができます。</p>
+	<p class="lead">誰かのアイデアにコメントすることも可能です。</p>
+	<p class="lead">あなたのアイデアが世界を変えるかもしれません。</p>
   </div>
-
-<%= form_with model: [@post, @comment] do |f| %>
-	<div class="marginconnect"><%= f.text_field :content, style: "width:40%",:class=>"form-control",placeholder:"コメントしよう！"%></div>
-	<div class="marginconnect"><%= f.submit 'コメントする',:class=>"btn btn-primary"%></div>
-<% end %>
-<hr>
-<h3>コメント一覧</h3>
-<div class="flexitem2">
-<% @comments.each do |c| %>
-	<div class="col-sm-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= c.user.name %></h5>
-        <p class="card-text"><%= c.content%></p>
-      </div>
-    </div>
-  </div>
-<% end %>
 </div>
-<br><br>

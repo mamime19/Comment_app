@@ -78,3 +78,5 @@ gem 'sass-rails', '>= 3.2'
 gem "cssbundling-rails", "~> 1.1"
 
 gem 'jquery-rails'
+	
+gem 'high_voltage'

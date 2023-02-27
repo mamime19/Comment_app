@@ -19,6 +19,9 @@ class PostsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+  def details
+    
+  end
   private
   def post_params
     params.require(:post).permit(:content)

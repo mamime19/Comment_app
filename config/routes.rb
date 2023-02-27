@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :create] do
      resources :comments, only: [:create]
   end
+  get  'static_pages/home'
+  get 'static_pages/contact'
   root 'posts#index'
+  
 end
