@@ -52,7 +52,7 @@
 <% if user_signed_in? %>
 	<%= form_for @post do |f| %>
 		<%= f.text_area :content, class: 'form-control',style: "width:40%",rows: "3", placeholder: "アイデアを投稿してみよう！"%>
-		<%= f.submit '投稿する',:class=>"btn btn-primary" %>
+    <%= f.submit '投稿する',:class=>"btn btn-primary" %>
 	<% end %>
 <% end %>
 <hr>
