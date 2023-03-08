@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   get  'static_pages/home'
   get 'static_pages/contact'
+  delete 'posts/:id' => 'posts#destroy'
   root 'posts#index'
   
 end

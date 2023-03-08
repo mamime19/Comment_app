@@ -51,12 +51,12 @@
       </div>
     </div>
   </div>
-
+  <br>
+<%= button_to '削除する', @post, :method => :delete ,:class=>"btn btn-dark btn-sm"%>
 <%= form_with model: [@post, @comment] do |f| %>
 	<div class="marginconnect"><%= f.text_field :content, style: "width:40%",:class=>"form-control",placeholder:"コメントしよう！"%></div>
 	<div class="marginconnect"><%= f.submit 'コメントする',:class=>"btn btn-primary"%></div>
 <% end %>
-<%= link_to "削除", post_path(@post.id), method: :delete, "data-confirm"=>"本当に消しますか？"%>
 <hr>
 <h3>コメント一覧</h3>
 <div class="flexitem2">
